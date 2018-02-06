@@ -1,0 +1,79 @@
+<div class="registration">
+  <div *ngIf="formRegistration.invalid || serverMessage.length" class="list-group error-message">
+    <small>
+      <div *ngIf="serverMessage.length" class="list-group-item list-group-item-danger" translate>
+        <div class="mb-1 alert-danger" translate>dialog.answerServer</div>
+        <div class="alert-danger" translate>{{serverMessage}}</div>
+      </div>
+      <div
+        *ngIf="(formRegistration.get('email').touched || formRegistration.get('email').dirty) && formRegistration.get('email').invalid"
+        class="list-group-item list-group-item-danger">
+        <div class="mb-1 alert-danger" translate>validationForm.emailControl</div>
+        <div class="alert-danger" *ngIf="formRegistration.get('email')['errors']['required']" translate>
+          validationForm.required
+        </div>
+        <div class="alert-danger" *ngIf="formRegistration.get('email')['errors']['email']" translate>
+          validationForm.email
+        </div>
+        <div class="alert-danger" *ngIf="formRegistration.get('email')['errors']['forbiddenEmail']" translate>
+          validationForm.forbiddenEmail
+        </div>
+      </div>
+      <div
+        *ngIf="(formRegistration.get('password').touched || formRegistration.get('password').dirty) && formRegistration.get('password').invalid"
+        class="list-group-item list-group-item-danger">
+        <div class="mb-1 alert-danger" translate>validationForm.passwordControl</div>
+        <div class="alert-danger" *ngIf="formRegistration.get('password')['errors']['required']" translate>
+          validationForm.required
+        </div>
+        <div class="alert-danger" *ngIf="formRegistration.get('password')['errors']['maxlength']" translate
+             [translateParams]="{value: formRegistration.get('password')['errors']['maxlength']['requiredLength']}">
+          validationForm.maxLength
+        </div>
+        <div class="alert-danger" *ngIf="formRegistration.get('password')['errors']['minlength']" translate
+             [translateParams]="{value: formRegistration.get('password')['errors']['minlength']['requiredLength']}">
+          validationForm.minLength
+        </div>
+      </div>
+    </small>
+  </div>
+  <form [formGroup]="formRegistration" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="registrationLanguage" translate>dialog.language</label>
+      <select class="form-control" id="registrationLanguage" [(ngModel)]="currentLanguage" (change)="onLanguageChange()"
+              [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let l of languages" [value]="l">{{l | fpFullLanguageName}}</option>
+      </select>
+    </div>
+    <div class="form-group"
+         [ngClass]="{'has-error': formRegistration.get('email').invalid && formRegistration.get('email').touched}">
+      <label for="registrationEmail" translate>dialog.email</label>
+      <input type="email" class="form-control" id="registrationEmail" placeholder="{{'dialog.enterEmail' | translate}}"
+             formControlName="email">
+    </div>
+    <div class="form-group"
+         [ngClass]="{'has-error': formRegistration.get('password').invalid && formRegistration.get('password').touched}">
+      <label for="registrationPassword" translate>dialog.password</label>
+      <input type="password" class="form-control" id="registrationPassword"
+             placeholder="{{'dialog.enterPassword' | translate}}" formControlName="password">
+    </div>
+    <div class="form-group"
+         [ngClass]="{'has-error': formRegistration.get('username').invalid && formRegistration.get('username').touched}">
+      <label for="registrationUsername" translate>dialog.username</label>
+      <input type="text" class="form-control" id="registrationUsername"
+             placeholder="{{'dialog.enterUsername' | translate}}" formControlName="username">
+    </div>
+    <div class="form-group"
+         [ngClass]="{'has-error': formRegistration.get('usersurname').invalid && formRegistration.get('usersurname').touched}">
+      <label for="registrationUsersurname" translate>dialog.usersurname</label>
+      <input type="text" class="form-control" id="registrationUsersurname"
+             placeholder="{{'dialog.enterUsersurname' | translate}}" formControlName="usersurname">
+    </div>
+    <button type="submit" class="btn btn-block btn-color" [disabled]="formRegistration.invalid" translate>
+      dialog.signUp
+    </button>
+  </form>
+  <a translate (click)="signInRedirect()">
+    dialog.signIn
+  </a>
+</div>

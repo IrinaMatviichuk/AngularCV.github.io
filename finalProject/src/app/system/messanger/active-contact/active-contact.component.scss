@@ -1,0 +1,73 @@
+$background-color: #a5c9e5;
+$color: #626466;
+$border-bottom: 1px solid #999;
+* {
+  background-color: #fff;
+}
+a {
+  text-decoration: none;
+  line-height: 2;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: $border-bottom;
+  padding: 0 4px;
+  color: #7d8287;
+}
+.search-group {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  background-color: #fff;
+  border-bottom: $border-bottom;
+  padding: 0 4px;
+  .btn-user {
+    border: 0;
+    line-height: 2;
+    width: 96px;
+    background-color: $background-color;
+    color: $color;
+  }
+  .input-user {
+    border: 0;
+    line-height: 2;
+    overflow: hidden;
+    width: calc(100% - 52px);
+    padding-left: 4px;
+    background-color: #e0e0e0;
+  }
+  .dropdown-menu {
+    padding: 0;
+    border-radius: 0;
+  }
+  a {
+    display: block;
+    width: 308px;
+  }
+}
+.contacts-group {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  .active {
+    background-color: #a5c9e5;
+  }
+  .contact-item {
+    height: 48px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  .img-frame {
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 16px;
+    height: 32px;
+    width: 32px;
+    background-color: #999;
+    margin-right: 8px;
+  }
+  .name-contact {
+    overflow: hidden;
+    width: calc(100% - 24px);
+  }
+}

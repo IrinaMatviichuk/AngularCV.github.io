@@ -1,0 +1,52 @@
+<div class="login">
+  <div *ngIf="formLogin.invalid || serverMessage.length" class="list-group error-message">
+    <small>
+      <div *ngIf="serverMessage.length" class="list-group-item list-group-item-danger" translate>
+        <div class="mb-1 alert-danger" translate>dialog.answerServer</div>
+        <div class="alert-danger" translate>{{serverMessage}}</div>
+      </div>
+      <div *ngIf="(formLogin.get('email').touched || formLogin.get('email').dirty) && formLogin.get('email').invalid"
+           class="list-group-item list-group-item-danger">
+        <div class="mb-1 alert-danger" translate>validationForm.emailControl</div>
+        <div class="alert-danger" *ngIf="formLogin.get('email')['errors']['required']" translate>
+          validationForm.required
+        </div>
+        <div class="alert-danger" *ngIf="formLogin.get('email')['errors']['email']" translate>validationForm.email</div>
+      </div>
+      <div
+        *ngIf="(formLogin.get('password').touched || formLogin.get('password').dirty) && formLogin.get('password').invalid"
+        class="list-group-item list-group-item-danger">
+        <div class="mb-1 alert-danger" translate>validationForm.passwordControl</div>
+        <div class="alert-danger" *ngIf="formLogin.get('password')['errors']['required']" translate>
+          validationForm.required
+        </div>
+      </div>
+    </small>
+  </div>
+  <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+    <div class="form-group" [ngClass]="{'has-error': formLogin.get('email').invalid && formLogin.get('email').touched,
+                       'has-error': serverMessage === 'dialog.incorrectEmail'}">
+      <label for="loginEmail" translate>dialog.email</label>
+      <input type="email" class="form-control" id="loginEmail" placeholder="{{'dialog.enterEmail' | translate}}"
+             formControlName="email">
+    </div>
+    <div class="form-group" [ngClass]="{'has-error': formLogin.get('password').invalid && formLogin.get('password').touched,
+                       'has-error': serverMessage === 'dialog.incorrectPassword'}">
+      <label for="loginPassword" translate>dialog.password</label>
+      <input type="password" class="form-control" id="loginPassword"
+             placeholder="{{'dialog.enterPassword' | translate}}" formControlName="password">
+    </div>
+    <div class="form-group">
+      <label for="loginLanguage" translate>dialog.language</label>
+      <select class="form-control" id="loginLanguage" [(ngModel)]="currentLanguage" (change)="onLanguageChange()"
+              [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let l of languages" [value]="l">{{l | fpFullLanguageName}}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-block btn-color" [disabled]="formLogin.invalid" translate>dialog.signIn
+    </button>
+  </form>
+  <a translate (click)="signUpRedirect()">
+    dialog.signUp
+  </a>
+</div>

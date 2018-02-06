@@ -1,0 +1,6 @@
+<header class="header">
+  <a class="btn-header" translate (click)="messanger()" *ngIf="!typeApp">dialog.messanger</a>
+  <a class="btn-header" translate (click)="phonebook()" *ngIf="typeApp">dialog.phonebook</a>
+  <a class="btn-header" translate [translateParams]="{surname: surname, name: name}"
+     (click)="signOut()">dialog.signOut</a>
+</header>

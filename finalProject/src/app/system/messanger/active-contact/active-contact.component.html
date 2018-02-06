@@ -1,0 +1,26 @@
+<div class="search-group">
+  <div class="btn-group dropdown" fpDropdown>
+    <button type="button" class="btn-user dropdown-toggle" translate>
+      dialog.parameter
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" (click)="changeCriteria('username')" translate>dialog.username</a>
+      <a class="dropdown-item" (click)="changeCriteria('usersurname')" translate>dialog.usersurname</a>
+      <a class="dropdown-item" (click)="changeCriteria('email')" translate>dialog.email</a>
+      <a class="dropdown-item" (click)="changeCriteria('date')" translate>dialog.withMessage</a>
+    </div>
+  </div>
+  <input type="text" class="input-user" [placeholder]="searchPlaceholder | translate" [(ngModel)]="searchValue">
+</div>
+<div class="contacts-group">
+  <a class="contact-item" *ngFor="let c of currentContactBook | search:searchValue:searchField | sort:'date'" (click)="getContact(c)" [fpActiveNav]="c">
+    <div class="img-frame"></div>
+    <div class="name-contact" *ngIf="c.usersurname || c.username">
+      {{c.usersurname}} {{c.username}}
+    </div>
+    <div class="name-contact" *ngIf="!c.usersurname && !c.username">
+      {{c.email}}
+    </div>
+  </a>
+</div>
+

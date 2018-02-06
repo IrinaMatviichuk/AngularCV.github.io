@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  background-color: #e7ebf0;
+  font: 13px/18px Tahoma,sans-serif,Arial,Helvetica;
+}
+html, body {
+  padding: 0;
+  min-width: 320px;
+  background-color: #e7ebf0;
+}

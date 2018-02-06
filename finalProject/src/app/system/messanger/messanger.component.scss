@@ -1,0 +1,53 @@
+$background-color: #a5c9e5;
+$color: #626466;
+.list-contacts {
+  height: 100vh;
+  background: #fff;
+}
+.correspondence-field {
+  height: 70vh;
+}
+a {
+  text-decoration: none;
+  line-height: 2;
+  padding: 0 4px;
+  color: $color;
+}
+a:hover {
+  background-color: $background-color;
+}
+.scroll {
+  overflow: auto;
+}
+fp-sender-field {
+  height: 20vh;
+  width: 100vw;
+  padding: 8px;
+  position: fixed;
+  bottom: 0;
+  background-color: #eff7fc;
+}
+@media (min-width: 640px) {
+  .list-contacts {
+    width: 320px;
+    position: fixed;
+    left: 0;
+  }
+  .correspondence-field {
+    width: calc(100% - 320px);
+    position: fixed;
+    left: 320px;
+  }
+  fp-sender-field {
+    height: 20vh;
+    width: calc(100% - 320px);
+  }
+  fp-correspondence-field {
+    position: fixed;
+    height: 70vh;
+    bottom: 20vh;
+    width: calc(100% - 320px);
+  }
+}
+
+

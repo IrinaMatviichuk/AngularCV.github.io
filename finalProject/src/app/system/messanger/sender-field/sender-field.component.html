@@ -1,0 +1,12 @@
+<div *ngIf="statusEditMessage">
+  <button class="btn btn-color" translate (click)="deleteMassege()">dialog.delete</button>
+  <button class="btn btn-color" *ngIf="edit" translate (click)="editMassege()">dialog.edit</button>
+  <button class="btn btn-color" *ngIf="!edit" translate (click)="saveMassege()">dialog.save</button>
+  <button class="btn btn-color" translate (click)="cancelEditMassege()">dialog.cancel</button>
+</div>
+<textarea class="sender-field" placeholder="{{'dialog.message' | translate}}"
+          (keyup.alt.Enter)="addNewLine()" (keyup.enter)="sendMessage()"
+          [(ngModel)]="message"
+          *ngIf="activeField"
+>
+</textarea>

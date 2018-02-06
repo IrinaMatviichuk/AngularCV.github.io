@@ -1,0 +1,33 @@
+$color-white: #fff;
+$color-hover: #d6cc32;
+header {
+  $background-color: #5682a3;
+  width: 100vw;
+  height: 64px;
+  background-color: $background-color;
+  color: $color-white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+  a {
+    background-color: $background-color;
+    text-decoration: none;
+    line-height: 3;
+    text-align: center;
+    border: 1px solid $color-white;
+    color: $color-white;
+    padding: 0 4px;
+    cursor: pointer;
+  }
+  a:hover {
+    border: 1px solid $color-hover;
+    color: $color-hover;
+  }
+}
+@media (max-width: 768px) {
+  header {
+    height: 48px;
+  }
+}

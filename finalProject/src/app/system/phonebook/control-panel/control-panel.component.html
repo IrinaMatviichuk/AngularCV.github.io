@@ -1,0 +1,29 @@
+<form [formGroup]="formContact">
+  <div class="btn-panel">
+    <button type="submit" class="btn-user fa fa-user-plus" [disabled]="formContact.invalid" *ngIf="!edit" (click)="contactAdd()"></button>
+    <button type="submit" class="btn-user fa fa-edit" [disabled]="formContact.invalid" *ngIf="edit" (click)="contactEdit()"></button>
+    <button type="submit" class="btn-user fa fa-filter" (click)="contactFilter()"></button>
+    <button type="submit" class="btn-user fa fa-refresh" (click)="contactRefresh()"></button>
+  </div>
+  <div class="form-group-user">
+    <input type="email" class="input-user" id="emailContact" placeholder="{{'dialog.email' | translate}}"
+           formControlName="email">
+  </div>
+  <div class="alert-danger error-msg" *ngIf="formContact.get('email').touched && formContact.invalid">
+    <small class="alert-danger"
+           *ngIf="formContact.get('email').touched && formContact.get('email')['errors']['required']" translate>
+      validationForm.required
+    </small>
+    <small class="alert-danger" *ngIf="formContact.get('email').touched && formContact.get('email')['errors']['email']"
+           translate>validationForm.email
+    </small>
+  </div>
+  <div class="form-group-user">
+    <input type="text" class="input-user" placeholder="{{'dialog.username' | translate}}"
+           formControlName="username">
+  </div>
+  <div class="form-group-user">
+    <input type="text" class="input-user" placeholder="{{'dialog.usersurname' | translate}}"
+           formControlName="usersurname">
+  </div>
+</form>

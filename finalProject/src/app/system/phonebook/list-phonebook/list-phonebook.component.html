@@ -1,0 +1,10 @@
+<div class="contact-group" *ngFor="let c of contactBook | sort:'usersurname'">
+  <div class="user-case" fpActiveNav>
+    <div>{{c.usersurname}} {{c.username}}</div>
+    <small>{{c.email}}</small>
+  </div>
+  <div class="control-case">
+      <i class="btn-control fa fa-edit" aria-hidden="true"(click)="editContact(c)" [fpActiveNav]="c"></i>
+      <i class="btn-control fa fa-trash" aria-hidden="true" (click)="deleteContact(c)" fpActiveNav></i>
+  </div>
+</div>

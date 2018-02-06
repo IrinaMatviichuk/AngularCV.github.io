@@ -1,0 +1,15 @@
+<div class="case-correspondence">
+  <div *ngFor="let m of correspondence | sort:'id'" (click)="checkMassege(m)"
+  >
+    <div [ngSwitch]="m.id_sender" class="user">
+      <div *ngSwitchCase="user.id" class="user-account">
+        <h5><span class="username">{{user.usersurname}} {{user.username}}:</span><span class="date">{{m.date | date:"dd-MM-yyyy"}}</span></h5>
+        <p [ngStyle]="{'background-color':m.id === checkId ? '#e5a5b2' : '#a5c9e5'}">{{m.text}}</p>
+      </div>
+      <div *ngSwitchDefault class="user-addressee">
+        <h5><span class="username">{{addressee.usersurname}} {{addressee.username}}:</span><span class="date">{{m.date | date:"dd-MM-yyyy"}}</span></h5>
+        <p>{{m.text}}</p>
+      </div>
+    </div>
+  </div>
+</div>

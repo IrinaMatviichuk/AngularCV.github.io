@@ -1,0 +1,38 @@
+.case-correspondence {
+  padding: 8px;
+}
+.user {
+  min-width: 304px;
+  display: flex;
+  flex-direction: column;
+  h5 {
+    display: flex;
+    justify-content: space-between;
+  }
+  .date {
+    font-size: 10px;
+  }
+  .username {
+    margin-right: 16px;
+    font-weight: bold;
+    color: #2a4051;
+  }
+  p {
+    border-radius: 4px;
+    line-height: 2;
+    padding: 0 4px;
+  }
+}
+.user-account {
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
+}
+.user-addressee {
+  display: flex;
+  align-self: flex-end;
+  flex-direction: column;
+  p {
+    background-color: #fff;
+  }
+}

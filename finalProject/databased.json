@@ -1,0 +1,124 @@
+{
+  "login": [
+    {
+      "email": "roy@test.com",
+      "password": "12345678",
+      "username": "Roy",
+      "usersurname": "Grey",
+      "role": "ROLE_ADMIN",
+      "id": 1
+    },
+    {
+      "email": "dima@test.com",
+      "password": "12345678",
+      "username": "Dima",
+      "usersurname": "Nosort",
+      "role": "ROLE_USER",
+      "id": 2
+    }
+  ],
+  "messange": [
+    {
+      "id_sender": 1,
+      "id_addressee": 3,
+      "date": "2017-01-15 12:12",
+      "text": "Hello, Nick",
+      "status": "active",
+      "id": 1
+    },
+    {
+      "id_sender": 3,
+      "id_addressee": 1,
+      "date": "2018-01-15 12:27",
+      "text": "Hello, Roy",
+      "status": "active",
+      "id": 2
+    },
+    {
+      "id_sender": 1,
+      "id_addressee": 3,
+      "date": "2018-01-15 12:29",
+      "text": "I am going to come to Kiev this weekend. Can meet?\n",
+      "status": "active",
+      "id": 3
+    },
+    {
+      "id_sender": 3,
+      "id_addressee": 1,
+      "date": "2018-01-15 12:30",
+      "text": "It's a good idea",
+      "status": "active",
+      "id": 4
+    },
+    {
+      "id_sender": 2,
+      "id_addressee": 1,
+      "date": "2018-01-26 12:37",
+      "text": "Hi, Roy",
+      "status": "active",
+      "id": 5
+    },
+    {
+      "id_sender": 2,
+      "id_addressee": 1,
+      "date": "2018-01-26 12:38",
+      "text": "February 3, will be a meeting of alumni at school. I have to collect our classmates. Can you help me organize it?",
+      "status": "active",
+      "id": 6
+    },
+    {
+      "id_sender": 1,
+      "id_addressee": 2,
+      "date": "2018-01-26 12:42",
+      "text": "Hi, Dima. Yes, of course",
+      "status": "active",
+      "id": 7
+    },
+    {
+      "id_sender": 3,
+      "id_addressee": 1,
+      "date": "2018-01-15 12:44",
+      "text": "Let me know when you're in Kyiv",
+      "status": "active",
+      "id": 8
+    },
+    {
+      "id_sender": 1,
+      "id_addressee": 3,
+      "date": "2018-01-15 12:45",
+      "text": "Ok\n",
+      "status": "active",
+      "id": 9
+    },
+    {
+      "id_sender": 1,
+      "id_addressee": 3,
+      "date": "2018-01-15 12:46",
+      "text": "I'll call when I arrive\n",
+      "status": "active",
+      "id": 10
+    }
+  ],
+  "contacts": [
+    {
+      "user_id": 1,
+      "contact_book": [
+        {
+          "email": "dima@test.com",
+          "username": "Dima",
+          "usersurname": "Nosort",
+          "date": "2018-01-30 23:52",
+          "id": 2
+        },
+        {
+          "email": "nick@test.com",
+          "username": "Nick",
+          "usersurname": "Winter",
+          "date": "2018-02-02 11:31",
+          "id": 3
+        }
+      ],
+      "id": 1
+    }
+  ]
+}
